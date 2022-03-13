@@ -7,6 +7,7 @@ echo "10.0.2.15 firebase.test  firebase.test  localhost" | sudo tee -a /etc/host
 
 # Update packages:
 apt-get update
+sudo apt-get upgrade
 
 # Install nmap:
 sudo apt-get install -y nmap
@@ -21,8 +22,16 @@ sudo apt-get install -y git
 # Install zip:
 sudo apt-get install -y zip unzip
 
-# Run upgrade:
-# sudo apt-get upgrade
+# Install node (latest version v17.7.1) and npm (latest version 8.5.2):
+curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+sudo apt-get install -y nodejs
+node -v
+npm -v
+
+# Install firebase tools (latest version 10.2.2):
+sudo npm install -g firebase-tools
+firebase -V
+
 
 
 
